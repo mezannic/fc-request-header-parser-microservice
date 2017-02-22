@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var useragent = require('express-useragent')
 
+app.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal'])
 app.use(useragent.express())
 
 app.get('*', function (req, res) {
